@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lonopedia - Your Loan Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img class ="lg" src="Screenshot 2025-02-03 223253.png">  
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#loans">Loan Types</a></li>
+        <li><a href="#calculator">Loan Calculator</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Welcome to Lonopedia</h1>
+    <p>Your ultimate guide to understanding and choosing the right loan.</p>
+    <a href="#loans" class="cta-button">Explore Loan Types</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Lonopedia</h2>
+    <p>Lonopedia is a platform dedicated to providing comprehensive information about various types of loans. Whether you're looking for a home loan, personal loan, or business loan, we've got you covered.</p>
+  </section>
+
+  <!-- Loan Types Section -->
+  <section id="loans" class="loans">
+    <h2>Loan Types</h2>
+    <div class="loan-cards">
+      <div class="card">
+        <img src="tierra-mallorca-rgJ1J8SDEAY-unsplash.jpg" alt="Home Loan">
+        <h3>Home Loan</h3>
+        <p>Get the best rates for your dream home.</p>
+      </div>
+      <div class="card">
+        <img src="alexander-mils-lCPhGxs7pww-unsplash.jpg" alt="Personal Loan">
+        <h3>Personal Loan</h3>
+        <p>Flexible loans for your personal needs.</p>
+      </div>
+      <div class="card">
+        <img src="pexels-karolina-grabowska-4386339.jpg" alt="Business Loan">
+        <h3>Business Loan</h3>
+        <p>Grow your business with our tailored loans.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loan Calculator Section -->
+  <section id="calculator" class="calculator">
+    <h2>Loan Calculator</h2>
+    <div class="calculator-container">
+      <label for="amount">Loan Amount ($):</label>
+      <input type="number" id="amount" placeholder="Enter amount">
+      
+      <label for="interest">Interest Rate (%):</label>
+      <input type="number" id="interest" placeholder="Enter interest rate">
+      
+      <label for="tenure">Loan Tenure (Years):</label>
+      <input type="number" id="tenure" placeholder="Enter tenure">
+      
+      <button onclick="calculateLoan()">Calculate</button>
+      
+      <h3>Monthly Payment: <span id="result"></span></h3>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Lonopedia. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
