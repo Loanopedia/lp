@@ -1,18 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const currencyRates = {
     USD: 1,
-    EUR: 0.92,
-    GBP: 0.78,
     INR: 83.12,
-    JPY: 147.5,
   };
 
   const currencySymbols = {
     USD: "$",
-    EUR: "€",
-    GBP: "£",
     INR: "₹",
-    JPY: "¥",
   };
 
   function updateCurrencySymbol() {
@@ -57,10 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <label for="currency">Currency:</label>
     <select id="currency" onchange="updateCurrencySymbol()">
       <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="GBP">GBP</option>
       <option value="INR">INR</option>
-      <option value="JPY">JPY</option>
     </select>
   `;
   calculatorSection.insertBefore(currencySelector, calculatorSection.firstChild);
