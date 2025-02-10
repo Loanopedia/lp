@@ -68,12 +68,17 @@ body {
     padding: 50px 20px;
     text-align: center;
   }
+  .loans{
+    height:auto;
+  }
   
   .loan-cards {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
+    margin-left: 85px;
+    margin-right: 85px;
   }
   
   .card {
