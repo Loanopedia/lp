@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <a href = "../index.html">
+            <img class ="lg" src="../images/Screenshot 2025-02-03 223253.png" alt = "logo for loanopedia">  
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#loans">Loan Types</a></li>
+            <li><a href="#calculator">Loan Calculator</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <section class = "smth">
+      <img src = "../images/pexels-karolina-grabowska-4386339.jpg" rel = "personal loan">
+
+      <div id = "calculator" class = "calculator">
+        <h2>Loan Calculator</h2>
+        <div class="calculator-container">
+          <label for="amount">Loan Amount ($):</label>
+          <input type="number" id="amount" placeholder="Enter amount">
+          
+          <label for="interest">Interest Rate (%):</label>
+          <input type="number" id="interest" placeholder="Enter interest rate">
+          
+          <label for="tenure">Loan Tenure (Years):</label>
+          <input type="number" id="tenure" placeholder="Enter tenure">
+          
+          <button onclick="calculateLoan()">Calculate</button>
+          
+          <h3>Monthly Payment: <span id="result"></span></h3>
+        </div>
+      </div>
+    </section>
+    <script src="../script.js"></script>
+</body>
+</html>
