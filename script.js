@@ -1,67 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
   const currencyRates = {
-    USD: 1,
-    INR: 83.12,
+    INR: 83.12, // INR is the only currency
   };
 
   const currencySymbols = {
-    USD: "$",
-    INR: "₹",
+    INR: "₹", // INR symbol
   };
-
-  function updateCurrencySymbol() {
-    const currency = document.getElementById("currency").value;
-    document.getElementById("currency-symbol").innerText = currencySymbols[currency];
-  }
 
   function calculateLoan() {
     const amount = parseFloat(document.getElementById("amount").value);
     const interest = parseFloat(document.getElementById("interest").value);
     const tenure = parseFloat(document.getElementById("tenure").value);
-    const currency = document.getElementById("currency").value;
 
     if (isNaN(amount) || isNaN(interest) || isNaN(tenure)) {
       alert("Please enter valid numbers.");
       return;
     }
 
-    // Convert loan amount to USD
-    const amountInUSD = amount / currencyRates[currency];
+    // Convert loan amount to INR (only INR is considered now)
+    const amountInINR = amount / currencyRates.INR;
 
-    // Calculate monthly payment in USD
+    // Calculate monthly payment in INR
     const monthlyInterest = interest / 100 / 12;
     const numberOfPayments = tenure * 12;
-    const monthlyPaymentUSD =
-      (amountInUSD * monthlyInterest) /
+    const monthlyPaymentINR =
+      (amountInINR * monthlyInterest) /
       (1 - Math.pow(1 + monthlyInterest, -numberOfPayments));
 
-    // Convert final payment back to selected currency
-    const convertedPayment = (monthlyPaymentUSD * currencyRates[currency]).toFixed(2);
+    // Convert final payment back to INR
+    const convertedPayment = (monthlyPaymentINR * currencyRates.INR).toFixed(2);
 
-    document.getElementById("result").innerText = `${currencySymbols[currency]}${convertedPayment} ${currency}`;
+    document.getElementById("result").innerText = `${currencySymbols.INR}${convertedPayment} INR`;
   }
 
   const calculatorSection = document.querySelector(".calculator");
 
-  // Create and insert currency selector at the top
-  const currencySelector = document.createElement("div");
-  currencySelector.style.textAlign = "center";
-  currencySelector.style.marginBottom = "10px";
-  currencySelector.innerHTML = `
-    <label for="currency">Currency:</label>
-    <select id="currency" onchange="updateCurrencySymbol()">
-      <option value="USD">USD</option>
-      <option value="INR">INR</option>
-    </select>
-  `;
-  calculatorSection.insertBefore(currencySelector, calculatorSection.firstChild);
+  // Remove currency selector completely, as INR is the only currency used now.
+  const currencySelector = document.querySelector("#currency-selector");
+  if (currencySelector) {
+    currencySelector.remove();
+  }
 
-  // Update Loan Amount label to reflect the selected currency
+  // Update Loan Amount label to reflect INR symbol
   const amountLabel = document.querySelector("label[for='amount']");
-  amountLabel.innerHTML = `Loan Amount (<span id='currency-symbol'>$</span>):`;
-
-  // Ensure the currency symbol updates on page load
-  updateCurrencySymbol();
+  amountLabel.innerHTML = `Loan Amount (<span id='currency-symbol'>₹</span>):`;
 
   // Style the calculator container for better alignment
   const calculatorContainer = document.querySelector(".calculator-container");
@@ -73,5 +55,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Expose functions globally
   window.calculateLoan = calculateLoan;
-  window.updateCurrencySymbol = updateCurrencySymbol;
 });

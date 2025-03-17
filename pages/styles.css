@@ -94,3 +94,7 @@ img {
 .calculator {
     flex:1;
 }
+
+.currency{
+    color: white;
+}
