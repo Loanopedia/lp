@@ -8,14 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   function calculateLoan() {
-    const amount = parseFloat(document.getElementById("amount").value);
-    const interest = parseFloat(document.getElementById("interest").value);
-    const tenure = parseFloat(document.getElementById("tenure").value);
+    let amount = document.getElementById("amount").value;
+    let interest = document.getElementById("interest").value;
+    let tenure = document.getElementById("tenure").value;
 
-    if (isNaN(amount) || isNaN(interest) || isNaN(tenure)) {
-      alert("Please enter valid numbers.");
+    // Ensure values are not empty and are positive numbers
+    if (!amount || !interest || !tenure || amount <= 0 || interest < 0 || tenure <= 0) {
+      alert("Please enter valid positive numbers.");
       return;
     }
+
+    amount = parseFloat(amount);
+    interest = parseFloat(interest);
+    tenure = parseFloat(tenure);
 
     // Convert loan amount to INR (only INR is considered now)
     const amountInINR = amount / currencyRates.INR;
@@ -23,17 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // Calculate monthly payment in INR
     const monthlyInterest = interest / 100 / 12;
     const numberOfPayments = tenure * 12;
-    const monthlyPaymentINR =
-      (amountInINR * monthlyInterest) /
-      (1 - Math.pow(1 + monthlyInterest, -numberOfPayments));
+    let monthlyPaymentINR;
+
+    if (monthlyInterest === 0) {
+      monthlyPaymentINR = amountInINR / numberOfPayments; // Simple division for zero interest
+    } else {
+      monthlyPaymentINR =
+        (amountInINR * monthlyInterest) /
+        (1 - Math.pow(1 + monthlyInterest, -numberOfPayments));
+    }
 
     // Convert final payment back to INR
     const convertedPayment = (monthlyPaymentINR * currencyRates.INR).toFixed(2);
 
     document.getElementById("result").innerText = `${currencySymbols.INR}${convertedPayment} INR`;
   }
-
-  const calculatorSection = document.querySelector(".calculator");
 
   // Remove currency selector completely, as INR is the only currency used now.
   const currencySelector = document.querySelector("#currency-selector");
