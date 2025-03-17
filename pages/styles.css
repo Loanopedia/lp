@@ -35,6 +35,10 @@ header nav ul li a {
     transition: color 0.3s ease-in-out;
 }
 
+header nav ul li a:hover{
+    text-decoration: underline;
+}
+
 .lg{
     height: 60px;
     padding: auto;
