@@ -15,7 +15,7 @@ function showInfo(infoType) {
   
   switch (infoType) {
     case 'bene':
-      content = '<h3>Benefits</h3><p>Here are the benefits...</p>';
+      content = `<h3>Benefits</h3><p>Here are the benefits...</p>`;
       break;
     case 'feat':
       content = '<h3>Features</h3><p>Here are the features...</p>';
