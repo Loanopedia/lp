@@ -148,6 +148,24 @@ button:hover{
     display: block;
 }
 
-#info-content li{
+.info-content h3{
+    font-size:30px;
+    margin:18px;
+    text-align: center;
+}
+
+.info-content ul{
+    margin:0px;
+    padding:0px;
+}
+
+.info-content li{
     list-style-type: none;
+    font-size: 18px;
+    padding: 2px;
+}
+
+.info {
+    display: flex;
+    justify-content: flex-start;
 }
