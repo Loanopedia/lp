@@ -140,6 +140,10 @@ button:hover{
     color: white;
 }
 
-.display-info {
-    
+.info-content {
+    display:none;
+}
+
+#bene {
+    display: block;
 }
