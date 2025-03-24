@@ -147,3 +147,7 @@ button:hover{
 #bene {
     display: block;
 }
+
+#info-content li{
+    list-style-type: none;
+}
