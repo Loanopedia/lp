@@ -167,5 +167,5 @@ button:hover{
 
 .info {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
