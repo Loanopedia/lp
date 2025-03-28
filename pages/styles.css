@@ -1,10 +1,8 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
-    color: #333;
 }
  
 header {
@@ -119,10 +117,13 @@ img {
     margin-left: 0;
     background-color: #FFFAF0;
     flex-wrap:wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .title{
     margin-left: 0px;
 }
+
 .name{
     color: black;
     cursor: pointer;
@@ -135,6 +136,7 @@ img {
     text-align: center;
     font-size: 15px;
 }
+
 button:hover{
     background-color: black;
     color: white;
@@ -142,6 +144,11 @@ button:hover{
 
 .info-content {
     display:none;
+    background-color: white;
+    padding: 20px;
+    margin: 48px 255px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 300px;
 }
 
 #bene {
@@ -149,8 +156,9 @@ button:hover{
 }
 
 .info-content h3{
-    font-size:30px;
-    margin:18px;
+    font-size:32px;
+    margin:8px 16px 20px 16px;
+    padding: 5px;
     text-align: center;
 }
 
@@ -161,11 +169,12 @@ button:hover{
 
 .info-content li{
     list-style-type: none;
-    font-size: 18px;
+    font-size: 20px;
     padding: 2px;
 }
 
 .info {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
