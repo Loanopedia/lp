@@ -65,9 +65,17 @@ header nav ul li a:hover{
   border-radius: 5px;
 }
   
+.loan-heading{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+}
 .about, .loans, .calculator, .contact {
   padding: 50px 20px;
   text-align: center;
+}
+.about h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-family: 30px;
 }
 
 .loans{
@@ -92,6 +100,7 @@ header nav ul li a:hover{
   text-align: center;
   transition: box-shadow 0.3s ease-in-out;
   cursor: pointer;
+  margin-top: 20px;
 }
 .card:hover{
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
