@@ -149,6 +149,8 @@ button:hover{
     margin: 48px 255px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 300px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 #bene {
@@ -174,6 +176,8 @@ button:hover{
 }
 
 .info {
+    overflow: hidden;
+    white-space: nowrap;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
